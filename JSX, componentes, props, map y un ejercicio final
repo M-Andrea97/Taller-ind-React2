@@ -1,0 +1,214 @@
+//Crea un nuevo componente llamado WelcomeMessage que renderice un mensaje de bienvenida en JSX. Luego, utiliza este componente en el componente principal App.
+
+export default function WelcomeMessage() {
+  const mensaje = "Desarrollo Web con React";
+  let nombre = "Andrea";
+  return (
+    <p>
+      Hola {nombre}, sea bienvenid@ al curso de: {mensaje}
+    </p>
+  );
+}
+
+//Crea un nuevo componente llamado ProductCard que represente una tarjeta de producto con información como el nombre, la descripción y el precio. Utiliza este componente para mostrar al menos tres productos diferentes en el componente principal App.
+export default function ProductCard() {
+  const productos = [
+    {
+      nombre: "Funko Pop Harry Potter",
+      descripcion:
+        "Esta increíble figura fabricada en vinilo con cabeza oscilante llamada POP de la marca Funko también conocidos como Funko POP, hace parte de uno de los tantos disponibles para coleccionar.",
+      precio: 79900,
+    },
+    {
+      nombre: "Funko Pop Llavero: Umbrella Academy - Vanya",
+      descripcion:
+        "Llavero Vanya para ser un mirador móvil. Hay una probabilidad de 1 en 6 de que encuentres la persecución blanca. El llavero de vinilo mide aproximadamente 4 centímetros de largo.",
+      precio: 29900,
+    },
+    {
+      nombre: "LEGO: Ramo de Flores",
+      descripcion:
+        "Cada detalle del ramo se realiza con componentes LEGO, todos personalizables para crear una pieza original y digna de ver. La mayoría de las flores tienen pétalos que pueden colocarse en distintas posiciones: así te divertirás diseñando diferentes arreglos.",
+      precio: 419900,
+    },
+  ];
+
+  return (
+    <>
+      <li>
+        <p>
+          <strong>nombre:</strong> {productos[0, 0].nombre}
+        </p>
+
+        <p>
+          <strong>descripcion:</strong> {productos[0, 0].descripcion}
+        </p>
+
+        <p>
+          <strong>precio:</strong> {productos[0, 0].precio}
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <strong>nombre:</strong> {productos[0, 1].nombre}
+        </p>
+        <p>
+          <strong>descripcion:</strong> {productos[0, 1].descripcion}
+        </p>
+        <p>
+          <strong>precio:</strong> {productos[0, 1].precio}
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <strong>nombre:</strong> {productos[0, 2].nombre}
+        </p>
+        <p>
+          <strong>descripcion:</strong> {productos[0, 2].descripcion}
+        </p>
+        <p>
+          <strong>precio:</strong> {productos[0, 2].precio}
+        </p>
+      </li>
+    </>
+  );
+}
+
+//Agrega propiedades (props) al componente ProductCard para pasar la información del producto desde el componente principal App. Incluye propiedades como el nombre, la descripción y el precio para cada producto y asegúrate de mostrar correctamente esta información en el componente ProductCard.
+
+export default function ProductCard() {
+  const productos = [
+    {
+      nombre: "Funko Pop Harry Potter",
+      descripcion:
+        "Esta increíble figura fabricada en vinilo con cabeza oscilante llamada POP de la marca Funko también conocidos como Funko POP, hace parte de uno de los tantos disponibles para coleccionar.",
+      precio: 79900,
+    },
+    {
+      nombre: "Funko Pop Llavero: Umbrella Academy - Vanya",
+      descripcion:
+        "Llavero Vanya para ser un mirador móvil. Hay una probabilidad de 1 en 6 de que encuentres la persecución blanca. El llavero de vinilo mide aproximadamente 4 centímetros de largo.",
+      precio: 29900,
+    },
+    {
+      nombre: "LEGO: Ramo de Flores",
+      descripcion:
+        "Cada detalle del ramo se realiza con componentes LEGO, todos personalizables para crear una pieza original y digna de ver. La mayoría de las flores tienen pétalos que pueden colocarse en distintas posiciones: así te divertirás diseñando diferentes arreglos.",
+      precio: 419900,
+    },
+  ];
+
+  return (
+    <>
+      <ComponenteHijo dato={productos[0, 0].nombre}></ComponenteHijo>
+      <ComponenteHijo dato={productos[0, 0].descripcion}></ComponenteHijo>
+      <ComponenteHijo dato={productos[0, 0].precio}></ComponenteHijo>
+
+      <ComponenteHijo dato={productos[0, 1].nombre}></ComponenteHijo>
+      <ComponenteHijo dato={productos[0, 1].descripcion}></ComponenteHijo>
+      <ComponenteHijo dato={productos[0, 1].precio}></ComponenteHijo>
+
+      <ComponenteHijo dato={productos[0, 2].nombre}></ComponenteHijo>
+      <ComponenteHijo dato={productos[0, 2].descripcion}></ComponenteHijo>
+      <ComponenteHijo dato={productos[0, 2].precio}></ComponenteHijo>
+    </>
+  )
+}
+
+const ComponenteHijo = (props) => {
+  return (
+    <li>
+      <p>
+        {props.dato}
+      </p>
+    </li>
+  );
+}
+
+
+//Crea una lista de productos en el componente principal App utilizando un array de objetos que contenga la información de cada producto. Luego, utiliza el método map para renderizar múltiples instancias del componente ProductCard con los datos de cada producto.
+
+export default function ProductCard() {
+  const productos = [
+    {
+      nombre: "Funko Pop Harry Potter",
+      descripcion:
+        "Esta increíble figura fabricada en vinilo con cabeza oscilante llamada POP de la marca Funko también conocidos como Funko POP, hace parte de uno de los tantos disponibles para coleccionar.",
+      precio: 79900,
+    },
+    {
+      nombre: "Funko Pop Llavero: Umbrella Academy - Vanya",
+      descripcion:
+        "Llavero Vanya para ser un mirador móvil. Hay una probabilidad de 1 en 6 de que encuentres la persecución blanca. El llavero de vinilo mide aproximadamente 4 centímetros de largo.",
+      precio: 29900,
+    },
+    {
+      nombre: "LEGO: Ramo de Flores",
+      descripcion:
+        "Cada detalle del ramo se realiza con componentes LEGO, todos personalizables para crear una pieza original y digna de ver. La mayoría de las flores tienen pétalos que pueden colocarse en distintas posiciones: así te divertirás diseñando diferentes arreglos.",
+      precio: 419900,
+    },]
+};
+
+return (
+  <>
+    {productos.map(productos => {
+      return <ComponenteHijo nombre={productos.nombre} descripcion={productos.descripcion} precio={productos.precio}></ComponenteHijo>
+    })}
+  </>
+);
+
+const componenteHijo = (props) => {
+  return (
+    <li>
+      <p>{props.nombre}</p>
+      <p>{props.descripcion}</p>
+      <p>{props.precio}</p>
+    </li>
+  );
+}
+
+//En este ejercicio final, crea un componente llamado ProductList que reciba una lista de productos como prop (props) y utilice el método map para renderizar dinámicamente múltiples instancias del componente ProductCard con los datos de cada producto. Utiliza este componente en el componente principal App y asegúrate de pasar la lista de productos como prop.
+
+
+export default function ProductCard() {
+  const productos = [
+    {
+      nombre: "Funko Pop Harry Potter",
+      descripcion:
+        "Esta increíble figura fabricada en vinilo con cabeza oscilante llamada POP de la marca Funko también conocidos como Funko POP, hace parte de uno de los tantos disponibles para coleccionar.",
+      precio: 79900,
+    },
+    {
+      nombre: "Funko Pop Llavero: Umbrella Academy - Vanya",
+      descripcion:
+        "Llavero Vanya para ser un mirador móvil. Hay una probabilidad de 1 en 6 de que encuentres la persecución blanca. El llavero de vinilo mide aproximadamente 4 centímetros de largo.",
+      precio: 29900,
+    },
+    {
+      nombre: "LEGO: Ramo de Flores",
+      descripcion:
+        "Cada detalle del ramo se realiza con componentes LEGO, todos personalizables para crear una pieza original y digna de ver. La mayoría de las flores tienen pétalos que pueden colocarse en distintas posiciones: así te divertirás diseñando diferentes arreglos.",
+      precio: 419900,
+    },]
+};
+
+return (
+  <ul>
+    {productos.map((elemento) => {
+      return <ProductList nombre={elemento.nombre} descripcion={elemento.descripcion} precio={elemento.precio}></ProductList>
+    })}
+  </ul>
+)
+
+function ProductList(listadoProductos) {
+  return (
+    <>
+      <p><strong>nombre:</strong> {listadoProductos.nombre}</p>
+      <p><strong>descripcion:</strong> {listadoProductos.descripcion}</p>
+      <p><strong>precio:</strong> {listadoProductos.precio}</p>
+    </>
+  )
+}
